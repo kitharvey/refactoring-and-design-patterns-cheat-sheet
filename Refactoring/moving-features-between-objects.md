@@ -7,93 +7,61 @@
 <br/>
 <br/>
 
-## **Composing Methods**
+## **Moving Features between Objects**
 <br/>
 <br/>
 
 **Move Method**  
-Problem: A method is used more in another class than in its own class.
-```typescript
-class Class1{
-  aMethod()
-}
+Problem: A method is used more in another class than in its own class.   
+![Move Method - Before](https://refactoring.guru/images/refactoring/diagrams/Move%20Method%20-%20Before.png)
 
-class Class2{
-
-}
-```
-
-Solution: Move this code to a separate new method (or function) and replace the old code with a call to the method.
-```typescript
-class Class1{
-  
-}
-
-class Class2{
-  aMethod()
-}
-```
+Solution: Move this code to a separate new method (or function) and replace the old code with a call to the method.   
+![[Move Method - After]](https://refactoring.guru/images/refactoring/diagrams/Move%20Method%20-%20After.png)
 <br/>
 <br/>
 
 **Move Field**  
-Problem: A field is used more in another class than in its own class.
-```typescript
-class Class1{
-  aField
-}
+Problem: A field is used more in another class than in its own class.   
+![[Move Field - Before]](https://refactoring.guru/images/refactoring/diagrams/Move%20Field%20-%20Before.png)
 
-class Class2{
-
-}
-```
-
-Solution: Create a field in a new class and redirect all users of the old field to it.
-```typescript
-class Class1{
-  
-}
-
-class Class2{
-  aField
-}
-```
+Solution: Create a field in a new class and redirect all users of the old field to it.   
+![[Move Field - After]](https://refactoring.guru/images/refactoring/diagrams/Move%20Field%20-%20After.png)
 <br/>
 <br/>
 
 **Extract Class**  
 Problem: When one class does the work of two, awkwardness results.  
-![Extract Class - Before](../assets/Extract%20Class%20-%20Before.png)
+![Extract Class - Before](https://refactoring.guru/images/refactoring/diagrams/Extract%20Class%20-%20Before.png)
 
 Solution: Instead, create a new class and place the fields and methods responsible for the relevant functionality in it.    
-![Extract Class - After](../assets/Extract%20Class%20-%20After.png)
+![Extract Class - After](https://refactoring.guru/images/refactoring/diagrams/Extract%20Class%20-%20After.png)
 <br/>
 <br/>
 
 **Inline Class**  
 Problem: A class does almost nothing and isn’t responsible for anything, and no additional responsibilities are planned for it.  
-![Inline Class - Before](../assets/Inline%20Class%20-%20Before.png)
+![Inline Class - Before](https://refactoring.guru/images/refactoring/diagrams/Inline%20Class%20-%20Before.png)
 
 Solution: Move all features from the class to another one.    
-![Inline Class - After](../assets/Inline%20Class%20-%20After.png)
+![Inline Class - After](https://refactoring.guru/images/refactoring/diagrams/Inline%20Class%20-%20After.png)
 <br/>
 <br/>
 
 **Hide Delegate**  
 Problem: The client gets object B from a field or method of object А. Then the client calls a method of object B.  
-![Hide Delegate - Before](../assets/Hide%20Delegate%20-%20Before.png)
+![Hide Delegate - Before](https://refactoring.guru/images/refactoring/diagrams/Hide%20Delegate%20-%20Before.png)
 
 Solution: Create a new method in class A that delegates the call to object B. Now the client doesn’t know about, or depend on, class B.    
-![Hide Delegate - After](../assets/Hide%20Delegate%20-%20After.png)
+![Hide Delegate - After](https://refactoring.guru/images/refactoring/diagrams/Hide%20Delegate%20-%20After.png)
 <br/>
 <br/>
 
 **Remove Middle Man**  
 Problem: A class has too many methods that simply delegate to other objects.  
-![Remove Middle Man - Before](../assets/Remove%20Middle%20Man%20-%20Before.png)
+![Remove Middle Man - Before](https://refactoring.guru/images/refactoring/diagrams/Remove%20Middle%20Man%20-%20Before.png)
 
 Solution: Delete these methods and force the client to call the end methods directly.    
-![Remove Middle Man - After](../assets/Remove%20Middle%20Man%20-%20After.png)
+![Remove Middle Man - After](https://refactoring.guru/images/refactoring/diagrams/Remove%20Middle%20Man%20-%20After.png)
 <br/>
 <br/>
 
@@ -128,7 +96,7 @@ class Report {
 
 **Introduce Local Extension**  
 Problem: A utility class doesn’t contain some methods that you need. But you can’t add these methods to the class.  
-![Introduce Local Extension - Before](../assets/Introduce%20Local%20Extension%20-%20Before.png)
+![Introduce Local Extension - Before](https://refactoring.guru/images/refactoring/diagrams/Introduce%20Local%20Extension%20-%20Before.png)
 
 Solution: Create a new class containing the methods and make it either the child or wrapper of the utility class.    
-![Introduce Local Extension - After](../assets/Introduce%20Local%20Extension%20-%20After.png)
+![Introduce Local Extension - After](https://refactoring.guru/images/refactoring/diagrams/Introduce%20Local%20Extension%20-%20After.png)
